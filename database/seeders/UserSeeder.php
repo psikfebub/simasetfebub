@@ -26,6 +26,8 @@ class UserSeeder extends Seeder
             'remember_token' => Str::random(10),
         ];
 
+        DB::beginTransaction();
+        try{
         $admin = User::create(array_merge([
             'email' => 'admin@gmail.com',
             'name' => 'admin',
@@ -39,13 +41,36 @@ class UserSeeder extends Seeder
         $role_admin = Role::create(['name' => 'admin']);
         $role_operator = Role::create(['name' => 'operator']);
 
-        $permission = Permission::create(['name'=>'read role']);
-        $permission = Permission::create(['name'=>'create role']);
-        $permission = Permission::create(['name'=>'update role']);
-        $permission = Permission::create(['name'=>'delete role']);
+        $permission = Permission::create(['name'=>'create unit']);
+        $permission = Permission::create(['name'=>'update unit']);
+        $permission = Permission::create(['name'=>'delete unit']);
+        $permission = Permission::create(['name'=>'read unit']);
+        $permission = Permission::create(['name'=>'read equipment']);
+        $permission = Permission::create(['name'=>'create equipment']);
+        $permission = Permission::create(['name'=>'delete equipment']);
+        $permission = Permission::create(['name'=>'update equipment']);
+
+        $role_admin->givePermissionTo('read unit');
+        $role_admin->givePermissionTo('delete unit');
+        $role_admin->givePermissionTo('update unit');
+        $role_admin->givePermissionTo('delete unit');
+        $role_admin->givePermissionTo('read equipment');
+        $role_admin->givePermissionTo('update equipment');
+        $role_admin->givePermissionTo('delete equipment');
+        $role_admin->givePermissionTo('create equipment');
+        $role_operator->givePermissionTo('read unit');
+        $role_operator->givePermissionTo('read equipment');
+        $role_operator->givePermissionTo('update equipment');
+        $role_operator->givePermissionTo('create equipment');
 
         $admin->assignRole('admin');
         $operator->assignRole('operator');
+
+        DB::commit();
+    }
+    catch(\Throwable $th){
+        DB::rollBack();
+    }
 
         // DB::table('users')->insert([
         //     'id' => Str::uuid()->toString(),
