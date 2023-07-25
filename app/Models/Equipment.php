@@ -12,7 +12,7 @@ class Equipment extends Model
     protected $fillable = [
         'name', 
         'specifications',
-        'merk',
+        'merek',
         'year',
         'locations',
         'pic'

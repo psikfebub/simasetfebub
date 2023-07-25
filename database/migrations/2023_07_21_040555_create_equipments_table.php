@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('specifications');
-            $table->string('merk');
+            $table->string('merek');
             $table->integer('year');
             $table->string('locations');
             $table->unsignedBigInteger('unit_id'); // Foreign key column
