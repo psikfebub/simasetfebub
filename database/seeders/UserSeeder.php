@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'id' => Str::uuid()->toString(),
             'username' => 'psik',
             'email' => 'psik.feb@ub.ac.id',
-            'password' => '123',
+            'password' => Hash::make('123'),
             'role' => 'admin'
         ]);
     }
