@@ -31,12 +31,12 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        if ($user->hasRole('admin')) {
+        if ($request->user()->hasRole('admin')) {
             return redirect()->route('admin.home');
-        } else if ($user->hasRole('operator')) {
+        } else if ($request->user()->hasRole('operator')) {
             return redirect()->route('operator.home');
         } else {
-            return redirect()->route('default.home');
+            return redirect()->route('/');
         }
     }
     /**
