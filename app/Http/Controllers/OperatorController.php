@@ -14,7 +14,7 @@ class OperatorController extends Controller
     public function index(Request $request)
     {
         if($request->user()->hasRole('operator')){
-            return view('operator/home');
+            return view('home');
         }
         abort(403);
     }

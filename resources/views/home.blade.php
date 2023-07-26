@@ -13,8 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    @if (Auth::user()->hasRole('admin'))
+                    {{ __('Selamat Datang Admin!') }}
+                    @else 
                     {{ __('Selamat Datang Operator!') }}
+                    @endif
                 </div>
             </div>
         </div>
