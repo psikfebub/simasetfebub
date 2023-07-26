@@ -51,16 +51,16 @@
                         @else
                             @if (Auth::user()->hasRole('admin'))
                                <li class="nav-item">
-                                    <a class="nav-link" href="#">{{ __('Equipment') }}</a>
+                                    <a class="nav-link" href="{{ route('equipment') }}">{{ __('Equipment') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">{{ __('Unit') }}</a>
+                                    <a class="nav-link" href="{{ route('unit') }}">{{ __('Unit') }}</a>
                                 </li>
                             @endif
 
                             @if (Auth::user()->hasRole('operator'))
                             <li class="nav-item">
-                                    <a class="nav-link" href="#">{{ __('Equipment') }}</a>
+                                    <a class="nav-link" href="{{ route('equipment') }}">{{ __('Equipment') }}</a>
                                 </li>
                             @endif
                             <li class="nav-item dropdown">
