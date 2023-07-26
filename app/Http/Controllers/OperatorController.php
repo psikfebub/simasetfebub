@@ -11,10 +11,10 @@ class OperatorController extends Controller
         $this->middleware('auth');
     }
 
-    public function dashboard(Request $request)
+    public function index(Request $request)
     {
         if($request->user()->hasRole('operator')){
-            return view('operator');
+            return view('operator.home');
         }
         abort(403);
     }
