@@ -28,6 +28,8 @@ Route::middleware(['auth'])->group(function () {
     // Semua rute di sini hanya dapat diakses oleh pengguna yang terautentikasi
     Route::get('/equipment', [App\Http\Controllers\EquipmentController::class, 'getEquipment'])->name('equipment');
     Route::get('/unit', [App\Http\Controllers\UnitController::class, 'getUnit'])->name('unit');
+    Route::get('/unit/add', [App\Http\Controllers\UnitController::class, 'add'])->name('addunit');
+    Route::post('/unit/create', [App\Http\Controllers\UnitController::class, 'create'])->name('create');
     // Dan rute lainnya...
 });
 
