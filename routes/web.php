@@ -30,6 +30,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/unit', [App\Http\Controllers\UnitController::class, 'getUnit'])->name('unit');
     Route::get('/unit/add', [App\Http\Controllers\UnitController::class, 'add'])->name('addunit');
     Route::post('/unit/create', [App\Http\Controllers\UnitController::class, 'create'])->name('create');
+    Route::get('/unit/edit/{id}', [App\Http\Controllers\UnitController::class, 'edit'])->name('editunit');
+    Route::post('/unit/update/{id}', [App\Http\Controllers\UnitController::class, 'update'])->name('update');
+    Route::get('/unit/delete/{id}', [App\Http\Controllers\UnitController::class, 'delete']);
     // Dan rute lainnya...
 });
 

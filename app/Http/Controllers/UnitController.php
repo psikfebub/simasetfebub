@@ -13,18 +13,37 @@ class UnitController extends Controller
         return view('unit', ['units' => $units]);
     }
 
-    public function add(){
+    public function add()
+    {
         return view('addunit');
     }
 
-    public function create(Request $req){
+    public function create(Request $req)
+    {
         $units = new Units;
         $units->name = $req->name;
         $units->locations = $req->locations;
         $units->save();
-        return redirect('/unit')->with('success','Unit atau departemen berhasil ditambahkan');
+        return redirect('/unit');
+    }
+    public function edit($id)
+    {
+        $units = Units::find($id);
+        return view('editunit', ['units' => $units]);
+    }
+    public function update($id, Request $req)
+    {
+        $units = Units::find($id);
+        $units->name = $req->name;
+        $units->locations = $req->locations;
+        $units->save();
+        return redirect('/unit');
     }
 
-    
-    
+    public function delete($id)
+    {
+        $units = Units::find($id);
+        $units->delete();
+        return redirect('/unit');
+    }
 }
