@@ -54,7 +54,7 @@
                                     <a class="nav-link" href="{{ route('equipment') }}">{{ __('Equipment') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('unit') }}">{{ __('Unit') }}</a>
+                                    <a class="nav-link" href="{{ route('unit') }}">{{ __('Ruang') }}</a>
                                 </li>
                             @endif
 

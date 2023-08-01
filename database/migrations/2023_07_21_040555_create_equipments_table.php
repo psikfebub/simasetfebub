@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('merek');
             $table->integer('year');
             $table->string('locations');
-            $table->unsignedBigInteger('unit_id'); // Foreign key column
+            $table->uuid('unit_id'); // Foreign key column
             $table->string('pic');
             $table->timestamps();
         });

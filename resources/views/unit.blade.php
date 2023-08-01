@@ -7,8 +7,9 @@
     <thead>
       <tr>
         <th scope="col">Kode Unit</th>
-        <th scope="col">Nama Unit</th>
-        <th scope="col">Lokasi</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Lantai</th>
+        <th scope="col">Gedung</th>
         <th scope="col">Tombol</th>
       </tr>
     </thead>
@@ -16,12 +17,12 @@
       <tr>
         @foreach ($units as $record)
         <td>{{ $record->id }}</td>
-        <td>{{ $record->name }}</td>
-        <td>{{ $record->locations }}</td>
+        <td>{{ $record->nama }}</td>
+        <td>{{ $record->lantai }}</td>
+        <td>{{ $record->gedung }}</td>
         <td>
           <a class="btn btn-primary" href="/unit/edit/{{$record->id}}">Edit</a>
           <br>
-          <!-- <a class="btn btn-danger" href="/unit/delete/{{$record->id}}">Delete</a>  -->
           <a href="/unit/delete/{{$record->id}}" class="hapus-data-link btn btn-danger">Hapus Data</a>
         </td>
       </tr>
