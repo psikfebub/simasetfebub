@@ -13,15 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('equipments', function (Blueprint $table) {
+        Schema::create('logupdateequipment', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('specifications');
-            $table->string('merek');
-            $table->date('year');
-            $table->string('locations');
-            $table->unsignedBigInteger('unit_id');
-            $table->string('pic');
             $table->timestamps();
         });
     }
@@ -33,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipments');
+        Schema::dropIfExists('logupdateequipment');
     }
 };

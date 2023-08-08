@@ -17,7 +17,7 @@
         <form action="/equipment/create" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="name">Nama Unit</label>
+                <label for="name">Nama Aset</label>
                 <input type="text" class="form-control" required="required" id="name" name="name">
             </div>
             <div class="form-group">
@@ -40,8 +40,8 @@
                 <label for="unit_id">Unit atau Departemen</label>
                 <select class="form-control" id="unit_id" name="unit_id">
                         <option selected>Pilih Unit atau Departemen</option>
-                    @foreach($units  as $u)
-                        <option value="{{$u->id}}">{{$u->name}}</option>
+                    @foreach($units  as $record)
+                        <option value="{{$record->id}}">{{$record->nama}}</option>
                     @endforeach
                 </select>
             </div>
@@ -49,6 +49,7 @@
                 <label for="pic">Penanggung Jawab</label>
                 <input type="text" class="form-control" required="required" id="pic" name="pic">
             </div>
+            <br>
             <button type="submit" class="btn btn-primary">Tambah Data</button>
         </form>
     </div>

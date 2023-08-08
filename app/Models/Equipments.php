@@ -13,6 +13,7 @@ class Equipments extends Model
         'specifications',
         'merek',
         'year',
+        'unit_id',
         'locations',
         'pic'
     ];

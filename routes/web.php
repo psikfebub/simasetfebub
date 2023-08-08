@@ -32,13 +32,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/unit/create', [App\Http\Controllers\UnitController::class, 'create'])->name('create');
     Route::get('/unit/edit/{id}', [App\Http\Controllers\UnitController::class, 'edit'])->name('editunit');
     Route::post('/unit/update/{id}', [App\Http\Controllers\UnitController::class, 'update'])->name('update');
-    Route::get('/unit/delete/{id}', [App\Http\Controllers\UnitController::class, 'delete']);
+    Route::get('/unit/delete/{id}', [App\Http\Controllers\UnitController::class, 'delete'])->name('delete');
 
-    // Route::get('/equipment/add', [App\Http\Controllers\EquipmentController::class, 'add'])->name('addequipment');
-    // Route::post('/equipment/create', [App\Http\Controllers\EquipmentController::class, 'create'])->name('create');
-    // Route::get('/equipment/edit/{id}', [App\Http\Controllers\EquipmentController::class, 'edit'])->name('editequipment');
-    // Route::post('/equippment/update/{id}', [App\Http\Controllers\EquipmentController::class, 'update'])->name('update');
-    // Route::get('/equipment/delete/{id}', [App\Http\Controllers\EquipmentController::class, 'delete']);
+    Route::get('/equipment/add', [App\Http\Controllers\EquipmentController::class, 'add'])->name('addequipment');
+    Route::post('/equipment/create', [App\Http\Controllers\EquipmentController::class, 'create'])->name('create');
+    Route::get('/equipment/edit/{id}', [App\Http\Controllers\EquipmentController::class, 'edit'])->name('editequipment');
+    Route::post('/equippment/update/{id}', [App\Http\Controllers\EquipmentController::class, 'update'])->name('update');
+    Route::get('/equipment/delete/{id}', [App\Http\Controllers\EquipmentController::class, 'delete']);
     // Dan rute lainnya...
 });
 

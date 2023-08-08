@@ -11,7 +11,8 @@ class EquipmentController extends Controller
     public function getEquipment()
     {
         $equipments = Equipments::all();
-        return view('equipment', ['equipments' => $equipments]);
+        $units= Units::all();
+        return view('equipment', ['equipments' => $equipments, 'units' => $units]);
     }
     public function add()
     {
@@ -23,9 +24,9 @@ class EquipmentController extends Controller
     {
         $equipments = new Equipments;
         $equipments->name = $req->name;
-        $equipments->spesifications = $req->name;
-        $equipments->merek = $req->name;
-        $equipments->year = $req->name;
+        $equipments->specifications = $req->specifications;
+        $equipments->merek = $req->merek;
+        $equipments->year = $req->year;
         $equipments->pic = $req->pic;
         $equipments->unit_id = $req->unit_id;
         $equipments->locations = $req->locations;

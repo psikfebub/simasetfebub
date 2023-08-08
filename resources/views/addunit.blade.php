@@ -16,6 +16,7 @@
         @endif
         <form action="/unit/create" method="post" enctype="multipart/form-data">
             @csrf
+            
             <div class="form-group">
                 <label for="nama">Nama Ruang</label>
                 <input type="text" class="form-control" required="required" id="nama" name="nama">

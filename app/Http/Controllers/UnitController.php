@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Units;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use Ramsey\Uuid\Uuid;
 
 class UnitController extends Controller
 {
@@ -22,7 +22,8 @@ class UnitController extends Controller
     public function create(Request $req)
     {
         $units = new Units;
-        $units->id = Str::uuid()->toString();
+        // $custom_uuid = Uuid::uuid4()->toString();
+        $units->id = $units->formatted_id;
         $units->nama = $req->nama;
         $units->lantai = $req->lantai;
         $units->gedung = $req->gedung;

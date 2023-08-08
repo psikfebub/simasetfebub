@@ -2,7 +2,11 @@
 
 @section('content')
 <div class="container">
+  @if (Auth::user()->hasRole('admin'))
   <a href="/equipment/add" class="btn btn-primary float-left"><i class="fas fa-plus"></i>Tambah Data</a>
+  @else
+  <span>Data Aset</span>
+  @endif
   <table class="table">
     <thead>
       <tr>
@@ -30,9 +34,9 @@
         <td>{{ $record->pic }}</td>
         <td>
           @if (Auth::user()->hasRole('admin'))
-          <a class="btn btn-primary" href="/unit/edit/{{$record->id}}">Edit</a>
+          <a class="btn btn-primary" href="/equipment/edit/{{$record->id}}">Edit</a>
           <br>
-          <a href="/equipemnt/delete/{{$record->id}}" class="hapus-data-link btn btn-danger">Hapus Data</a>
+          <a href="/equipment/delete/{{$record->id}}" class="hapus-data-link btn btn-danger">Hapus Data</a>
           @else
           <a class="btn btn-primary" href="/equipment/edit/{{$record->id}}">Edit</a>
           @endif
