@@ -39,7 +39,6 @@
             <div class="form-group">
                 <label for="unit_id">Unit atau Departemen</label>
                 <select class="form-control" id="unit_id" name="unit_id">
-                        <option selected>Pilih Unit atau Departemen</option>
                     @foreach($units  as $record)
                         <option value="{{$record->id}}">{{$record->nama}}</option>
                     @endforeach
@@ -49,7 +48,8 @@
                 <label for="pic">Penanggung Jawab</label>
                 <input type="text" class="form-control" required="required" id="pic" name="pic" value="{{$equipments->pic}}">
             </div>
-            <button type="submit" class="btn btn-primary">Tambah Data</button>
+            <br>
+            <button type="submit" class="btn btn-primary">Update Data</button>
         </form>
     </div>
 </div>

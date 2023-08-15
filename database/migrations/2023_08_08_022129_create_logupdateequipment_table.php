@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('logupdateequipment', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->integer('id');
+            $table->string('name');
+            $table->text('specifications');
+            $table->string('merek');
+            $table->date('year');
+            $table->unsignedBigInteger('unit_id');
+            $table->timestamp('tanggal_delete');
         });
     }
 
